@@ -25,7 +25,7 @@
         </div>
       </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Menú" aria-expanded="false">
+      <button class="menu-btn" id="menuBtn" aria-label="Menú" aria-expanded="false" type="button">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -36,7 +36,7 @@
     <div class="drawer-panel">
       <div class="drawer-head">
         <div class="drawer-title">MICHAEL TAXI</div>
-        <button class="drawer-close" id="drawerClose" aria-label="Cerrar">✕</button>
+        <button class="drawer-close" id="drawerClose" aria-label="Cerrar" type="button">✕</button>
       </div>
 
       <nav class="drawer-nav">
@@ -51,7 +51,7 @@
         <a class="btn primary" href="https://wa.me/12039478462" target="_blank" rel="noopener" data-i18n="btn_whatsapp">WhatsApp (203)</a>
       </div>
     </div>
-    <button class="drawer-backdrop" id="drawerBackdrop" aria-label="Cerrar fondo"></button>
+    <button class="drawer-backdrop" id="drawerBackdrop" aria-label="Cerrar fondo" type="button"></button>
   </aside>
 
   <main id="top">
@@ -59,7 +59,6 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="pill">Danbury • CT • 24/7</div>
           <h1 data-i18n="hero_title">Traslados profesionales dentro y fuera del estado</h1>
           <p class="lead" data-i18n="hero_sub">
             Aeropuertos, delivery, prueba del DMV, jump start, lockout y más. Respuesta rápida por WhatsApp.
@@ -170,40 +169,40 @@
       </div>
     </section>
 
-    <!-- Formulario real -->
+    <!-- Formulario -->
     <section id="contact" class="section alt">
       <div class="container">
         <h2 class="section-title" data-i18n="form_title">Pedir servicio</h2>
 
         <div class="formcard">
-          <form id="bookingForm" class="form">
-            <div class="grid2">
-              <label>
+          <form id="bookingForm" class="booking-form" autocomplete="on">
+            <div class="bf-grid">
+              <label class="bf-field">
                 <span data-i18n="form_name">Nombre</span>
                 <input id="bkName" required autocomplete="given-name" />
               </label>
 
-              <label>
+              <label class="bf-field">
                 <span data-i18n="form_last">Apellido</span>
                 <input id="bkLast" required autocomplete="family-name" />
               </label>
             </div>
 
-            <label>
+            <label class="bf-field">
               <span data-i18n="form_addr">Dirección</span>
               <input id="bkAddr" placeholder="Ej: 123 Main St, Danbury CT" autocomplete="street-address" />
             </label>
 
-            <label>
+            <label class="bf-field">
               <span data-i18n="form_service">¿Qué servicio necesitas?</span>
               <input id="bkService" placeholder="Aeropuerto / Delivery / DMV / Jump Start / Lockout" />
             </label>
 
-            <label>
+            <label class="bf-field">
               <span data-i18n="form_location">Ubicación actual (opcional)</span>
-              <div class="locrow">
-                <input id="bkLoc" placeholder="Pulsa para agregar ubicación" />
-                <button class="btn ghost" type="button" id="bkLocBtn" data-i18n="form_loc">Agregar mi ubicación actual</button>
+              <div class="bf-loc">
+                <input id="bkLoc" placeholder="Pulsa el botón para agregar ubicación" />
+                <button type="button" class="btn ghost" id="bkLocBtn" data-i18n="form_loc">Agregar mi ubicación actual</button>
               </div>
             </label>
 
@@ -213,7 +212,7 @@
       </div>
     </section>
 
-    <!-- Música (solo texto “Música”) -->
+    <!-- Música -->
     <section id="music" class="section">
       <div class="container">
         <h2 class="section-title" data-i18n="music_title">Música</h2>
@@ -236,13 +235,13 @@
     </footer>
   </main>
 
-  <!-- WhatsApp flotante (1 burbuja + 2 botones) -->
+  <!-- WhatsApp flotante -->
   <button class="wa-fab" id="waFab" type="button" aria-label="WhatsApp">WhatsApp</button>
 
   <div class="wa-pop" id="waPop" aria-hidden="true">
     <div class="wa-title" data-i18n="wa_welcome">¿A dónde te llevamos o qué servicio necesitas?</div>
     <div class="wa-actions">
-      <a class="wa-action call" id="waCall" href="tel:+1-203-947-8462" data-i18n="wa_call">Llamar</a>
+      <a class="wa-action call" id="waCall" href="tel:+12039478462" data-i18n="wa_call">Llamar</a>
       <a class="wa-action msg" id="waMsg" href="https://wa.me/12039478462" target="_blank" rel="noopener" data-i18n="wa_msg">Mensaje</a>
     </div>
   </div>
