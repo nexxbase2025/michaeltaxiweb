@@ -130,8 +130,12 @@ svg{max-width:100%;display:block}
 .drawer-nav a{
   padding:12px 12px;
   border-radius:14px;
-  border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.05);
+  color:rgba(255,255,255,.96);
+  font-weight:800;
+  letter-spacing:.2px;
+  text-shadow: 0 0 12px rgba(102,179,255,.25);
 }
 .drawer-nav a:active{transform:scale(.99)}
 .drawer-cta{margin-top:auto; display:flex; flex-direction:column; gap:10px}
@@ -407,3 +411,44 @@ svg{max-width:100%;display:block}
 section[id]{scroll-margin-top:84px}
 
 .drawer, .drawer-panel{max-width:100vw}
+
+/* Booking form */
+.booking{display:grid; gap:12px}
+.grid2{display:grid; grid-template-columns:1fr; gap:12px}
+@media (min-width:560px){ .grid2{grid-template-columns:1fr 1fr} }
+.field{display:grid; gap:6px}
+.field span{font-weight:700; color:rgba(234,241,255,.92)}
+.field input{
+  width:100%;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
+  color:var(--text);
+  outline:none;
+}
+.field input:focus{border-color: rgba(102,179,255,.55); box-shadow: 0 0 0 4px rgba(102,179,255,.10)}
+.locRow{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.locRow input{flex:1; min-width:180px}
+
+/* Music section */
+.music-embed{
+  display:flex; gap:10px; align-items:center;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
+  border-radius:18px;
+  padding:12px;
+}
+.mp-btn{
+  width:44px; height:44px; border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.02);
+  color:var(--text);
+  display:grid; place-items:center;
+}
+.mp-btn.primary{background:linear-gradient(135deg, rgba(26,86,214,.95), rgba(102,179,255,.65)); border-color:rgba(255,255,255,.14)}
+.mp-track{min-width:0}
+.mp-title{font-weight:900}
+.mp-sub{font-size:.9rem; color:rgba(234,241,255,.78)}
+
+.wa-pop-actions{display:grid; gap:10px; margin-top:10px}

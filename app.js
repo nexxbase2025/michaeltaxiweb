@@ -10,7 +10,7 @@ const dict = {
     nav_whatsapp: "WhatsApp",
 
     hero_pill: "Danbury • Connecticut • 24/7",
-    hero_title: "Traslados profesionales en Danbury y todo Connecticut",
+    hero_title: "Traslados profesionales dentro y fuera del estado",
     hero_sub: "Aeropuertos, delivery, prueba del DMV, jump start y apertura de puertas. Atención rápida y amable.",
 
     btn_services: "Ver servicios",
@@ -79,6 +79,13 @@ const dict = {
     player_title: "Música",
 
     wa_title: "¿Dónde te llevamos o qué servicio necesitas?"
+    form_title: "Anticipa tu servicio",
+    form_name: "Nombre",
+    form_last: "Apellido",
+    form_addr: "Dirección (opcional)",
+    form_loc: "Usar mi ubicación",
+    form_send: "Enviar por WhatsApp",
+    music_title: "Música",
   },
 
   en: {
@@ -91,7 +98,7 @@ const dict = {
     nav_whatsapp: "WhatsApp",
 
     hero_pill: "Danbury • Connecticut • 24/7",
-    hero_title: "Professional rides in Danbury and all Connecticut",
+    hero_title: "Professional rides in and out of state",
     hero_sub: "Airports, delivery, DMV road test car, jump start and car lockout. Fast, friendly service.",
 
     btn_services: "View services",
@@ -208,39 +215,120 @@ function setupDrawer() {
   drawer?.querySelectorAll("a[href^='#']").forEach(a => {
     a.addEventListener("click", (e) => {
       const href = a.getAttribute("href");
-      if (!href || href === "#" ) return;
+      if (!href || href === "#") return;
       const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
       close();
-      // small delay so the drawer can close before scrolling
       setTimeout(() => {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        // account for sticky header
+        const y = target.getBoundingClientRect().top + window.pageYOffset - 74;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
         history.replaceState(null, "", href);
-      }, 10);
+      }, 60);
     });
   });
-document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown, (e) => {
     if (e.key === "Escape") close();
   });
 }
+
+// ====== Booking form ======
+function setupBookingForm(){
+  const form = document.getElementById("bookingForm");
+  if(!form) return;
+
+  const nameEl = document.getElementById("bkName");
+  const lastEl = document.getElementById("bkLast");
+  const addrEl = document.getElementById("bkAddr");
+  const locEl  = document.getElementById("bkLoc");
+  const locBtn = document.getElementById("bkLocBtn");
+
+  const state = { lat:null, lng:null };
+
+  const setLocText = () => {
+    if(state.lat && state.lng){
+      const map = `https://maps.google.com/?q=${state.lat},${state.lng}`;
+      locEl.value = map;
+    }
+  };
+
+  locBtn?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    if(!navigator.geolocation){
+      locEl.value = "Ubicación no disponible en este dispositivo.";
+      return;
+    }
+    locEl.value = "Obteniendo ubicación…";
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        state.lat = pos.coords.latitude.toFixed(6);
+        state.lng = pos.coords.longitude.toFixed(6);
+        setLocText();
+      },
+      () => {
+        locEl.value = "No se pudo obtener la ubicación. Puedes escribir la dirección.";
+      },
+      { enableHighAccuracy:true, timeout:9000, maximumAge:0 }
+    );
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const tLang = document.documentElement.lang === "es" ? "es" : "en";
+    const t = dict[tLang] || dict.en;
+
+    const name = (nameEl?.value || "").trim();
+    const last = (lastEl?.value || "").trim();
+    const addr = (addrEl?.value || "").trim();
+    const loc  = (locEl?.value || "").trim();
+
+    const lines = [];
+    lines.push("MICHAEL TAXI — Solicitud de servicio");
+    if(name || last) lines.push(`Nombre: ${name} ${last}`.trim());
+    if(addr) lines.push(`Dirección: ${addr}`);
+    if(loc) lines.push(`Ubicación actual: ${loc}`);
+    lines.push("");
+    lines.push("Servicio que necesito: ");
+    const msg = encodeURIComponent(lines.join("\n"));
+
+    window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, "_blank", "noopener");
+  });
+}
+
+
 
 // ====== WhatsApp pop ======
 function setupWhatsAppPop() {
   const fab = document.getElementById("waFab");
   const pop = document.getElementById("waPop");
-  const btn = fab?.querySelector(".wa-btn");
+  const msgBtn = document.getElementById("waMsg");
+  const callBtn = document.getElementById("waCall");
 
-  const close = () => {
-    pop?.classList.remove("open");
-    pop?.setAttribute("aria-hidden", "true");
+  const tLang = () => (document.documentElement.lang === "es" ? "es" : "en");
+
+  const buildMsg = () => {
+    const t = dict[tLang()] || dict.en;
+    return encodeURIComponent(t.wa_line1);
   };
 
-  btn?.addEventListener("click", (e) => {
+  const syncLinks = () => {
+    const msg = buildMsg();
+    if(msgBtn) msgBtn.href = `https://wa.me/${WA_NUMBER}?text=${msg}`;
+    if(callBtn) callBtn.href = `tel:+${WA_NUMBER}`;
+  };
+
+  const close = () => {
+    pop.classList.remove("open");
+    pop.setAttribute("aria-hidden", "true");
+  };
+
+  syncLinks();
+
+  fab?.addEventListener("click", (e) => {
     e.stopPropagation();
-    if (!pop) return;
-    const isOpen = pop.classList.contains("open");
-    if (isOpen) {
+    syncLinks();
+    if (pop.classList.contains("open")) {
       close();
     } else {
       pop.classList.add("open");
@@ -252,10 +340,13 @@ function setupWhatsAppPop() {
   pop?.addEventListener("click", (e) => e.stopPropagation());
 }
 
+
+
 // Init
 document.addEventListener("DOMContentLoaded", () => {
   const lang = getPreferredLang();
   applyI18n(lang);
   setupDrawer();
   setupWhatsAppPop();
+  setupBookingForm();
 });

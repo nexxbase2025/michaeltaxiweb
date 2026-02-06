@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>MICHAEL TAXI LLC</title>
-  <meta name="description" content="Traslados profesionales en Danbury y todo Connecticut. Aeropuertos, delivery, prueba del DMV, jump start y más." />
+  <meta name="description" content="Traslados profesionales dentro y fuera del estado. Aeropuertos, delivery, prueba del DMV, jump start y más." />
   <meta name="theme-color" content="#0a2b6b" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +63,7 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="pill" data-i18n="hero_pill">Danbury • Connecticut • 24/7</div>
-          <h1 data-i18n="hero_title">Traslados profesionales en Danbury y todo Connecticut</h1>
+          <h1 data-i18n="hero_title">Traslados profesionales dentro y fuera del estado</h1>
           <p class="lead" data-i18n="hero_sub">Aeropuertos, delivery, prueba del DMV, jump start y apertura de puertas. Atención rápida y amable.</p>
 
           <div class="hero-actions">
@@ -255,27 +255,51 @@
         </div>
       </div>
     </footer>
+
+  <!-- Música -->
+  <section class="section" id="music">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="music_title">Música</h2>
+        <p class="muted">Reproductor listo para integrar (play / siguiente / atrás).</p>
+      </div>
+
+      <div class="music-embed">
+        <button class="mp-btn" type="button" aria-label="Anterior">⏮</button>
+        <button class="mp-btn primary" type="button" aria-label="Play/Pause">▶︎</button>
+        <button class="mp-btn" type="button" aria-label="Siguiente">⏭</button>
+        <div class="mp-track">
+          <div class="mp-title">MICHAEL TAXI RADIO</div>
+          <div class="mp-sub">Aquí conectas tu reproductor</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
   </main>
 
   <!-- Floating mini player (placeholder) -->
-  <div class="music-player" id="musicPlayer" aria-label="Reproductor de música">
-    <button class="mp-btn" type="button" aria-label="Anterior">⏮</button>
-    <button class="mp-btn play" type="button" aria-label="Play/Pause">▶︎</button>
-    <button class="mp-btn" type="button" aria-label="Siguiente">⏭</button>
-    <div class="mp-meta">
-      <div class="mp-title" data-i18n="player_title">Música</div>
-</div>
+  </div>
   </div>
 
-  <!-- WhatsApp floating bubble with chooser -->
-  <div class="wa-fab" id="waFab">
-    <button class="wa-btn" type="button" aria-label="WhatsApp">WhatsApp</button>
-    <div class="wa-pop" id="waPop" aria-hidden="true">
-      <div class="wa-pop-title" data-i18n="wa_title">¿Dónde te llevamos o qué servicio necesitas?</div>
-      <a class="wa-link" href="https://wa.me/12039478462" target="_blank" rel="noopener">WhatsApp 1</a>
-</div>
+  
+  <!-- WhatsApp FAB -->
+  <button class="wa-fab" id="waFab" aria-label="WhatsApp" title="WhatsApp">
+    <span class="wa-ico" aria-hidden="true">💬</span>
+  </button>
+
+  <div class="wa-pop" id="waPop" aria-hidden="true">
+    <div class="wa-pop-head" data-i18n="wa_line1">¿A dónde te llevamos o qué servicio necesitas?</div>
+    <div class="wa-pop-actions">
+      <a class="btn primary full" id="waMsg" href="https://wa.me/12039478462" target="_blank" rel="noopener">Mensaje</a>
+      <a class="btn ghost full" id="waCall" href="tel:+12039478462">Llamar</a>
+    </div>
+    <div class="mini" style="margin-top:8px">
+      <div>WhatsApp: <a class="mini-link" href="https://wa.me/12039478462" target="_blank" rel="noopener">+1 (203) 947-8462</a></div>
+    </div>
   </div>
 
-  <script src="./app.js"></script>
+
+<script src="./app.js"></script>
 </body>
 </html>
