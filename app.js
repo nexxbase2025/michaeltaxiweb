@@ -1,0 +1,252 @@
+// ====== i18n dictionary ======
+const dict = {
+  es: {
+    slogan: "Tu viaje, a tiempo y seguro",
+
+    nav_services: "Servicios",
+    nav_auction: "Subastas",
+    nav_reviews: "Calificación",
+    nav_contact: "Anticipa tu servicio",
+    nav_whatsapp: "WhatsApp",
+
+    hero_pill: "Danbury • Connecticut • 24/7",
+    hero_title: "Traslados profesionales en Danbury y todo Connecticut",
+    hero_sub: "Aeropuertos, delivery, prueba del DMV, jump start y apertura de puertas. Atención rápida y amable.",
+
+    btn_services: "Ver servicios",
+    btn_rate: "Danos ⭐⭐⭐⭐⭐",
+    btn_book: "Anticipa tu servicio",
+    btn_whatsapp_1: "WhatsApp 1",
+    btn_whatsapp_2: "WhatsApp 2",
+
+    badge_1: "Disponibilidad",
+    badge_2: "Rutas claras",
+    badge_3: "Servicio premium",
+
+    quick_title: "Pide tu servicio en segundos",
+    quick_sub: "Toca WhatsApp y dinos destino + hora. Te respondemos rápido.",
+    quick_note: "*Pagos en efectivo. Servicio dentro y fuera de CT.",
+
+    special_title: "Servicios Especiales",
+    special_sub: "Elige el servicio y escríbenos por WhatsApp. Te confirmamos rápido.",
+    svc_cta: "Cotizar ahora",
+
+    svc_airports_t: "Traslados a los Aeropuertos",
+    svc_airports_d: "Recogida puntual, seguimiento de vuelo y un viaje cómodo desde/hacia cualquier aeropuerto.",
+
+    svc_delivery_t: "Delivery",
+    svc_delivery_d: "Comida, medicina, bebidas y más. Entregas rápidas con confirmación por WhatsApp.",
+
+    svc_dmv_t: "Vehículo para Prueba del DMV",
+    svc_dmv_d: "Renta de vehículo para tu road test. Agenda con tiempo y llega listo.",
+
+    svc_jump_t: "Jump Start",
+    svc_jump_d: "¿Batería descargada? Te ayudamos a encender tu carro rápido y seguro.",
+
+    svc_lock_t: "Lockout",
+    svc_lock_d: "Si dejaste las llaves dentro, abrimos tu vehículo con herramientas propias y cuidado.",
+
+    auction_title: "Te ayudamos a comprar tu vehículo en subastas",
+    auction_sub: "Aunque no tengas licencia de dealer, nosotros te guiamos paso a paso para comprar de forma segura.",
+    auction_b1: "Acceso a un inventario amplio (más de 1,000 opciones).",
+    auction_b2: "Acompañamiento en el proceso y verificación básica.",
+    auction_b3: "Precios accesibles y opciones para tu presupuesto.",
+    auction_cta: "Quiero información",
+
+    reviews_title: "Danos tus estrellitas",
+    reviews_sub: "Tu calificación nos ayuda a crecer. Gracias por apoyar un servicio serio.",
+    reviews_btn: "Calificar en Google",
+    reviews_note: "Abre Google Maps y deja ⭐⭐⭐⭐⭐ en 10 segundos.",
+
+    rev1: "“Puntuales y muy profesionales. Excelente trato.”",
+    rev1a: "Cliente verificado",
+    rev2: "“Me ayudaron con mi prueba del DMV. Todo perfecto.”",
+    rev2a: "Danbury, CT",
+    rev3: "“Delivery rápido y comunicación clara por WhatsApp.”",
+    rev3a: "New Milford, CT",
+
+    contact_title: "Anticipa tu servicio",
+    contact_sub: "Escríbenos por WhatsApp con destino, hora y tipo de servicio. Te confirmamos enseguida.",
+    contact_box_t: "WhatsApp directo",
+    contact_box_d: "Toca un botón y envía tu mensaje. Si prefieres, también puedes copiar el número.",
+    contact_tip_t: "Tip rápido",
+    contact_tip_d: "Envíanos esto y listo:",
+    contact_template: "Hola, necesito: (Aeropuerto/Delivery/DMV/Jump Start/Lockout). Dirección: ____. Hora: ____. Gracias.",
+
+    footer_rights: "Derechos reservados.",
+    designed_by: "Diseñado por",
+
+    player_title: "Música (demo)",
+    player_sub: "Aquí insertaremos tu reproductor",
+
+    wa_title: "¿Dónde te llevamos o qué servicio necesitas?"
+  },
+
+  en: {
+    slogan: "On time. Safe. Professional.",
+
+    nav_services: "Services",
+    nav_auction: "Auctions",
+    nav_reviews: "Reviews",
+    nav_contact: "Book ahead",
+    nav_whatsapp: "WhatsApp",
+
+    hero_pill: "Danbury • Connecticut • 24/7",
+    hero_title: "Professional rides in Danbury and all Connecticut",
+    hero_sub: "Airports, delivery, DMV road test car, jump start and car lockout. Fast, friendly service.",
+
+    btn_services: "View services",
+    btn_rate: "Rate us ⭐⭐⭐⭐⭐",
+    btn_book: "Book ahead",
+    btn_whatsapp_1: "WhatsApp 1",
+    btn_whatsapp_2: "WhatsApp 2",
+
+    badge_1: "Availability",
+    badge_2: "Clear routes",
+    badge_3: "Premium service",
+
+    quick_title: "Request service in seconds",
+    quick_sub: "Tap WhatsApp and send destination + time. We reply fast.",
+    quick_note: "*Cash only. Service inside and outside CT.",
+
+    special_title: "Special Services",
+    special_sub: "Pick a service and message us on WhatsApp. Quick confirmation.",
+    svc_cta: "Get a quote",
+
+    svc_airports_t: "Airport Transfers",
+    svc_airports_d: "On-time pickup, flight tracking and a comfortable ride to/from any airport.",
+
+    svc_delivery_t: "Delivery",
+    svc_delivery_d: "Food, medicine, beverages and more. Fast delivery with WhatsApp confirmation.",
+
+    svc_dmv_t: "DMV Road Test Car",
+    svc_dmv_d: "Car rental for your road test. Schedule ahead and be ready.",
+
+    svc_jump_t: "Jump Start",
+    svc_jump_d: "Dead battery? We’ll get your car started quickly and safely.",
+
+    svc_lock_t: "Lockout",
+    svc_lock_d: "Keys locked inside? We can open your vehicle with proper tools and care.",
+
+    auction_title: "We help you buy a vehicle at auctions",
+    auction_sub: "No dealer license? No problem. We guide you step-by-step to buy safely.",
+    auction_b1: "Access to a wide inventory (1,000+ options).",
+    auction_b2: "Process guidance and basic checks.",
+    auction_b3: "Affordable prices and budget-friendly options.",
+    auction_cta: "I want info",
+
+    reviews_title: "Give us your stars",
+    reviews_sub: "Your rating helps us grow. Thanks for supporting a serious service.",
+    reviews_btn: "Leave a Google review",
+    reviews_note: "Open Google Maps and leave ⭐⭐⭐⭐⭐ in 10 seconds.",
+
+    rev1: "“On time and very professional. Great service.”",
+    rev1a: "Verified customer",
+    rev2: "“They helped with my DMV road test. Perfect.”",
+    rev2a: "Danbury, CT",
+    rev3: "“Fast delivery and clear WhatsApp communication.”",
+    rev3a: "New Milford, CT",
+
+    contact_title: "Book ahead",
+    contact_sub: "Message us on WhatsApp with destination, time and service. We’ll confirm right away.",
+    contact_box_t: "Direct WhatsApp",
+    contact_box_d: "Tap a button and send your message. You can also copy the number.",
+    contact_tip_t: "Quick template",
+    contact_tip_d: "Send this and you’re set:",
+    contact_template: "Hi, I need: (Airport/Delivery/DMV/Jump Start/Lockout). Address: ____. Time: ____. Thank you.",
+
+    footer_rights: "All rights reserved.",
+    designed_by: "Designed by",
+
+    player_title: "Music (demo)",
+    player_sub: "Your player goes here",
+
+    wa_title: "Where are we taking you or what service do you need?"
+  }
+};
+
+// ====== i18n apply ======
+function getPreferredLang() {
+  const lang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+  return lang.startsWith("es") ? "es" : "en";
+}
+
+function applyI18n(lang) {
+  const t = dict[lang] || dict.en;
+
+  // update <html lang="">
+  document.documentElement.lang = lang;
+
+  // apply text nodes
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+}
+
+// ====== Drawer ======
+function setupDrawer() {
+  const drawer = document.getElementById("drawer");
+  const menuBtn = document.getElementById("menuBtn");
+  const closeBtn = document.getElementById("closeDrawer");
+  const backdrop = document.getElementById("drawerBackdrop");
+
+  const open = () => {
+    drawer.classList.add("open");
+    drawer.setAttribute("aria-hidden", "false");
+    menuBtn.setAttribute("aria-expanded", "true");
+  };
+
+  const close = () => {
+    drawer.classList.remove("open");
+    drawer.setAttribute("aria-hidden", "true");
+    menuBtn.setAttribute("aria-expanded", "false");
+  };
+
+  menuBtn?.addEventListener("click", open);
+  closeBtn?.addEventListener("click", close);
+  backdrop?.addEventListener("click", close);
+
+  drawer?.querySelectorAll("a[href^='#']").forEach(a => {
+    a.addEventListener("click", close);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+}
+
+// ====== WhatsApp pop ======
+function setupWhatsAppPop() {
+  const fab = document.getElementById("waFab");
+  const pop = document.getElementById("waPop");
+  const btn = fab?.querySelector(".wa-btn");
+
+  const close = () => {
+    pop?.classList.remove("open");
+    pop?.setAttribute("aria-hidden", "true");
+  };
+
+  btn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (!pop) return;
+    const isOpen = pop.classList.contains("open");
+    if (isOpen) {
+      close();
+    } else {
+      pop.classList.add("open");
+      pop.setAttribute("aria-hidden", "false");
+    }
+  });
+
+  document.addEventListener("click", () => close());
+  pop?.addEventListener("click", (e) => e.stopPropagation());
+}
+
+// Init
+document.addEventListener("DOMContentLoaded", () => {
+  const lang = getPreferredLang();
+  applyI18n(lang);
+  setupDrawer();
+  setupWhatsAppPop();
+});
