@@ -56,7 +56,7 @@ const dict = {
     reviews_title: "Danos tus estrellitas",
     reviews_sub: "Tu calificación nos ayuda a crecer. Gracias por apoyar un servicio serio.",
     reviews_btn: "Calificar en Google",
-    reviews_note: "Abre Google Maps y deja ⭐⭐⭐⭐⭐ en 10 segundos.",
+    reviews_note: "Abre Google Maps y deja estrellitas en segundos.",
 
     rev1: "“Puntuales y muy profesionales. Excelente trato.”",
     rev1a: "Cliente verificado",
@@ -76,8 +76,7 @@ const dict = {
     footer_rights: "Derechos reservados.",
     designed_by: "Diseñado por",
 
-    player_title: "Música (demo)",
-    player_sub: "Aquí insertaremos tu reproductor",
+    player_title: "Música",
 
     wa_title: "¿Dónde te llevamos o qué servicio necesitas?"
   },
@@ -138,7 +137,7 @@ const dict = {
     reviews_title: "Give us your stars",
     reviews_sub: "Your rating helps us grow. Thanks for supporting a serious service.",
     reviews_btn: "Leave a Google review",
-    reviews_note: "Open Google Maps and leave ⭐⭐⭐⭐⭐ in 10 seconds.",
+    reviews_note: "Open Google Maps and leave stars in seconds.",
 
     rev1: "“On time and very professional. Great service.”",
     rev1a: "Verified customer",
@@ -158,8 +157,7 @@ const dict = {
     footer_rights: "All rights reserved.",
     designed_by: "Designed by",
 
-    player_title: "Music (demo)",
-    player_sub: "Your player goes here",
+    player_title: "Music",
 
     wa_title: "Where are we taking you or what service do you need?"
   }
@@ -208,10 +206,21 @@ function setupDrawer() {
   backdrop?.addEventListener("click", close);
 
   drawer?.querySelectorAll("a[href^='#']").forEach(a => {
-    a.addEventListener("click", close);
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href");
+      if (!href || href === "#" ) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      close();
+      // small delay so the drawer can close before scrolling
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", href);
+      }, 10);
+    });
   });
-
-  document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") close();
   });
 }
