@@ -1,305 +1,252 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>MICHAEL TAXI LLC</title>
-  <meta name="description" content="Traslados profesionales dentro y fuera del estado. Aeropuertos, delivery, prueba del DMV, jump start y más." />
+  <meta name="description" content="Traslados profesionales dentro y fuera del estado. Aeropuertos, delivery, prueba del DMV, jump start y lockout." />
   <meta name="theme-color" content="#0a2b6b" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css" />
 </head>
-<body>
 
-  <!-- Sticky glass header -->
-  <header class="topbar" role="banner">
-    <div class="topbar-inner container">
-      <a class="brand" href="#top" aria-label="MICHAEL TAXI LLC">
-        <img src="./assets/logo.png" alt="Michael Taxi" width="40" height="40">
-        <div class="brand-text">
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="Michael Taxi">
+        <img class="brand-logo" src="./assets/logo.png" alt="Michael Taxi">
+        <div class="brand-txt">
           <div class="brand-name">MICHAEL TAXI</div>
           <div class="brand-tag" data-i18n="slogan">Tu viaje, a tiempo y seguro</div>
         </div>
       </a>
 
-      <button class="icon-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer">
-        <span class="burger" aria-hidden="true"></span>
+      <button class="menu-btn" id="menuBtn" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- Off-canvas menu -->
+  <!-- Drawer -->
   <aside class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menú">
+    <div class="drawer-panel">
       <div class="drawer-head">
         <div class="drawer-title">MICHAEL TAXI</div>
-        <button class="icon-btn small" id="closeDrawer" aria-label="Cerrar menú">✕</button>
+        <button class="drawer-close" id="drawerClose" aria-label="Cerrar">✕</button>
       </div>
 
-      <nav class="drawer-nav" aria-label="Navegación">
-        <a href="#services" data-i18n="nav_services">Servicios</a>
-        <a href="#auction" data-i18n="nav_auction">Subastas</a>
-        <a href="#reviews" data-i18n="nav_reviews">Calificación</a>
-        <a href="#contact" data-i18n="nav_contact">Anticipa tu servicio</a>
+      <nav class="drawer-nav">
+        <a href="#services" class="navlink" data-i18n="nav_services">Servicios</a>
+        <a href="#auction" class="navlink" data-i18n="nav_auction">Subastas</a>
+        <a href="#reviews" class="navlink" data-i18n="nav_reviews">Calificar</a>
+        <a href="#contact" class="navlink" data-i18n="nav_contact">Pedir servicio</a>
+        <a href="#music" class="navlink" data-i18n="nav_music">Música</a>
       </nav>
 
-      <div class="drawer-cta">
-        <a class="btn primary full" href="#contact" data-i18n="btn_book">Anticipa tu servicio</a>
-        <div class="mini">
-          <span data-i18n="nav_whatsapp">WhatsApp:</span>
-          <a class="mini-link" href="https://wa.me/12039478462" target="_blank" rel="noopener">+1 (203) 947-8462</a>
-</div>
+      <div class="drawer-footer">
+        <a class="btn primary" href="https://wa.me/12039478462" target="_blank" rel="noopener" data-i18n="btn_whatsapp">WhatsApp (203)</a>
       </div>
     </div>
-    <button class="drawer-backdrop" id="drawerBackdrop" aria-label="Cerrar"></button>
+    <button class="drawer-backdrop" id="drawerBackdrop" aria-label="Cerrar fondo"></button>
   </aside>
 
-  <!-- Hero -->
   <main id="top">
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="pill" data-i18n="hero_pill">Danbury • Connecticut • 24/7</div>
+          <div class="pill">Danbury • CT • 24/7</div>
           <h1 data-i18n="hero_title">Traslados profesionales dentro y fuera del estado</h1>
-          <p class="lead" data-i18n="hero_sub">Aeropuertos, delivery, prueba del DMV, jump start y apertura de puertas. Atención rápida y amable.</p>
+          <p class="lead" data-i18n="hero_sub">
+            Aeropuertos, delivery, prueba del DMV, jump start, lockout y más. Respuesta rápida por WhatsApp.
+          </p>
 
           <div class="hero-actions">
-            <a class="btn primary" href="#services" data-i18n="btn_services">Ver servicios</a>
-            <a class="btn ghost" href="#reviews" data-i18n="btn_rate">Danos ⭐⭐⭐⭐⭐</a>
+            <a class="btn primary" href="#contact" data-i18n="btn_book">Pedir servicio</a>
+            <a class="btn ghost" href="#services" data-i18n="btn_services">Ver servicios</a>
           </div>
 
           <div class="hero-badges">
-            <div class="badge">
-              <div class="badge-k">24/7</div>
-              <div class="badge-t" data-i18n="badge_1">Disponibilidad</div>
-            </div>
-            <div class="badge">
-              <div class="badge-k">GPS</div>
-              <div class="badge-t" data-i18n="badge_2">Rutas claras</div>
-            </div>
-            <div class="badge">
-              <div class="badge-k">PRO</div>
-              <div class="badge-t" data-i18n="badge_3">Servicio premium</div>
-            </div>
+            <div class="badge"><b>24/7</b><span data-i18n="b1">Disponible</span></div>
+            <div class="badge"><b>PRO</b><span data-i18n="b2">Confiable</span></div>
+            <div class="badge"><b>GPS</b><span data-i18n="b3">Ubicación</span></div>
           </div>
         </div>
 
-        <div class="hero-card" aria-label="Acciones rápidas">
-          <div class="hero-card-inner">
-            <h3 data-i18n="quick_title">Pide tu servicio en segundos</h3>
-            <p class="muted" data-i18n="quick_sub">Toca WhatsApp y dinos destino + hora. Te respondemos rápido.</p>
-
-            <div class="quick-buttons">
-              <a class="btn primary full" href="https://wa.me/12039478462" target="_blank" rel="noopener" data-i18n="btn_whatsapp_1">WhatsApp 1</a>
-</div>
-
-            <div class="tiny muted" data-i18n="quick_note">*Pagos en efectivo. Servicio dentro y fuera de CT.</div>
-          </div>
+        <!-- Imagen horizontal (reemplaza el archivo) -->
+        <div class="hero-photo">
+          <img src="./assets/header.jpg" alt="Michael Taxi Header">
         </div>
       </div>
-
       <div class="hero-glow" aria-hidden="true"></div>
     </section>
 
-    <!-- Services -->
+    <!-- Servicios -->
     <section id="services" class="section">
       <div class="container">
-        <h2 class="section-title" data-i18n="special_title">Servicios Especiales</h2>
-        <p class="section-sub" data-i18n="special_sub">Elige el servicio y escríbenos por WhatsApp. Te confirmamos rápido.</p>
+        <h2 class="section-title" data-i18n="services_title">Servicios</h2>
+        <p class="section-sub" data-i18n="services_sub">Elige tu servicio. Cada tarjeta tiene imagen JPG/PNG reemplazable.</p>
 
-        <div class="svc-grid">
-          <article class="svc-card">
-            <img src="./assets/svc-airports.jpg" alt="Traslados a Aeropuertos" />
-            <div class="svc-body">
+        <div class="cards">
+          <article class="card">
+            <img src="./assets/svc-airports.jpg" alt="Aeropuertos">
+            <div class="card-body">
               <h3 data-i18n="svc_airports_t">Traslados a los Aeropuertos</h3>
-              <p data-i18n="svc_airports_d">Recogida puntual, seguimiento de vuelo y un viaje cómodo desde/hacia cualquier aeropuerto.</p>
-              <a class="svc-link" href="#contact" data-i18n="svc_cta">Cotizar ahora</a>
+              <p data-i18n="svc_airports_d">Puntuales, cómodos y con coordinación por WhatsApp desde/hacia cualquier aeropuerto.</p>
             </div>
           </article>
 
-          <article class="svc-card">
-            <img src="./assets/svc-delivery.jpg" alt="Delivery" />
-            <div class="svc-body">
+          <article class="card">
+            <img src="./assets/svc-delivery.jpg" alt="Delivery">
+            <div class="card-body">
               <h3 data-i18n="svc_delivery_t">Delivery</h3>
-              <p data-i18n="svc_delivery_d">Comida, medicina, bebidas y más. Entregas rápidas con confirmación por WhatsApp.</p>
-              <a class="svc-link" href="#contact" data-i18n="svc_cta">Cotizar ahora</a>
+              <p data-i18n="svc_delivery_d">Comida, medicina, bebidas y más. Entrega rápida con confirmación.</p>
             </div>
           </article>
 
-          <article class="svc-card">
-            <img src="./assets/svc-dmv.jpg" alt="Vehículo para prueba DMV" />
-            <div class="svc-body">
+          <article class="card">
+            <img src="./assets/svc-dmv.jpg" alt="DMV Test">
+            <div class="card-body">
               <h3 data-i18n="svc_dmv_t">Vehículo para Prueba del DMV</h3>
-              <p data-i18n="svc_dmv_d">Renta de vehículo para tu road test. Agenda con tiempo y llega listo.</p>
-              <a class="svc-link" href="#contact" data-i18n="svc_cta">Cotizar ahora</a>
+              <p data-i18n="svc_dmv_d">Renta de vehículo para tu road test. Agenda con tiempo.</p>
             </div>
           </article>
 
-          <article class="svc-card">
-            <img src="./assets/svc-jumpstart.jpg" alt="Jump Start" />
-            <div class="svc-body">
+          <article class="card">
+            <img src="./assets/svc-jumpstart.jpg" alt="Jump Start">
+            <div class="card-body">
               <h3 data-i18n="svc_jump_t">Jump Start</h3>
-              <p data-i18n="svc_jump_d">¿Batería descargada? Te ayudamos a encender tu carro rápido y seguro.</p>
-              <a class="svc-link" href="#contact" data-i18n="svc_cta">Cotizar ahora</a>
+              <p data-i18n="svc_jump_d">¿Batería descargada? Te ayudamos a encender tu carro rápido.</p>
             </div>
           </article>
 
-          <article class="svc-card">
-            <img src="./assets/svc-lockout.jpg" alt="Apertura de puerta" />
-            <div class="svc-body">
+          <article class="card">
+            <img src="./assets/svc-lockout.jpg" alt="Lockout">
+            <div class="card-body">
               <h3 data-i18n="svc_lock_t">Lockout</h3>
-              <p data-i18n="svc_lock_d">Si dejaste las llaves dentro, abrimos tu vehículo con herramientas propias y cuidado.</p>
-              <a class="svc-link" href="#contact" data-i18n="svc_cta">Cotizar ahora</a>
+              <p data-i18n="svc_lock_d">Si dejaste las llaves dentro, abrimos tu vehículo con herramientas propias.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Auction help -->
+    <!-- Subastas -->
     <section id="auction" class="section alt">
       <div class="container">
         <div class="split">
           <div>
             <h2 class="section-title" data-i18n="auction_title">Te ayudamos a comprar tu vehículo en subastas</h2>
-            <p class="section-sub" data-i18n="auction_sub">Aunque no tengas licencia de dealer, nosotros te guiamos paso a paso para comprar de forma segura.</p>
-
+            <p class="section-sub" data-i18n="auction_sub">
+              No importa si no tienes licencia de dealer: te guiamos para comprar seguro y a buen precio.
+            </p>
             <ul class="ticks">
-              <li data-i18n="auction_b1">Acceso a un inventario amplio (más de 1,000 opciones).</li>
-              <li data-i18n="auction_b2">Acompañamiento en el proceso y verificación básica.</li>
-              <li data-i18n="auction_b3">Precios accesibles y opciones para tu presupuesto.</li>
+              <li data-i18n="auction_b1">Opciones amplias y precios accesibles.</li>
+              <li data-i18n="auction_b2">Acompañamiento paso a paso.</li>
+              <li data-i18n="auction_b3">Asesoría para elegir mejor.</li>
             </ul>
-
             <a class="btn primary" href="#contact" data-i18n="auction_cta">Quiero información</a>
           </div>
-
-          <div class="auction-card">
-            <img src="./assets/svc-auction.jpg" alt="Subastas de vehículos" />
+          <div class="auction-photo">
+            <img src="./assets/svc-auction.jpg" alt="Subastas">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Reviews -->
+    <!-- Reviews (solo esto) -->
     <section id="reviews" class="section">
       <div class="container">
-        <h2 class="section-title" data-i18n="reviews_title">Danos tus estrellitas</h2>
-        <p class="section-sub" data-i18n="reviews_sub">Tu calificación nos ayuda a crecer. Gracias por apoyar un servicio serio.</p>
-
-        <div class="review-cta">
+        <h2 class="section-title" data-i18n="reviews_title">Calificar en Google</h2>
+        <div class="reviewbox">
+          <div class="stars" aria-hidden="true">★★★★★</div>
           <a class="btn primary" href="https://g.page/r/CT-NYGVpAwezEAE/review" target="_blank" rel="noopener" data-i18n="reviews_btn">Calificar en Google</a>
-          <span class="muted" data-i18n="reviews_note">Abre Google Maps y deja estrellitas en segundos.</span>
-        </div>
-<p data-i18n="rev1">“Puntuales y muy profesionales. Excelente trato.”</p>
-            <span class="muted" data-i18n="rev1a">Cliente verificado</span>
-          </article>
-          <article class="review">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <p data-i18n="rev2">“Me ayudaron con mi prueba del DMV. Todo perfecto.”</p>
-            <span class="muted" data-i18n="rev2a">Danbury, CT</span>
-          </article>
-          <article class="review">
-            <div class="stars" aria-hidden="true">★★★★★</div>
-            <p data-i18n="rev3">“Delivery rápido y comunicación clara por WhatsApp.”</p>
-            <span class="muted" data-i18n="rev3a">New Milford, CT</span>
-          </article>
+          <div class="muted" data-i18n="reviews_note">Abre Google Maps y deja estrellitas en segundos.</div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Formulario real -->
     <section id="contact" class="section alt">
       <div class="container">
-        <h2 class="section-title" data-i18n="contact_title">Anticipa tu servicio</h2>
-        <p class="section-sub" data-i18n="contact_sub">Escríbenos por WhatsApp con destino, hora y tipo de servicio. Te confirmamos enseguida.</p>
+        <h2 class="section-title" data-i18n="form_title">Pedir servicio</h2>
 
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3 data-i18n="contact_box_t">WhatsApp directo</h3>
-            <p class="muted" data-i18n="contact_box_d">Toca un botón y envía tu mensaje. Si prefieres, también puedes copiar el número.</p>
+        <div class="formcard">
+          <form id="bookingForm" class="form">
+            <div class="grid2">
+              <label>
+                <span data-i18n="form_name">Nombre</span>
+                <input id="bkName" required autocomplete="given-name" />
+              </label>
 
-            <div class="quick-buttons">
-              <a class="btn primary full" href="https://wa.me/12039478462" target="_blank" rel="noopener" data-i18n="btn_whatsapp_1">WhatsApp 1</a>
-</div>
-          </div>
+              <label>
+                <span data-i18n="form_last">Apellido</span>
+                <input id="bkLast" required autocomplete="family-name" />
+              </label>
+            </div>
 
-          <div class="contact-card">
-            <h3 data-i18n="contact_tip_t">Tip rápido</h3>
-            <p class="muted" data-i18n="contact_tip_d">Envíanos esto y listo:</p>
-            <div class="codebox" data-i18n="contact_template">Hola, necesito: (Aeropuerto/Delivery/DMV/Jump Start/Lockout). Dirección: ____. Hora: ____. Gracias.</div>
-          </div>
+            <label>
+              <span data-i18n="form_addr">Dirección</span>
+              <input id="bkAddr" placeholder="Ej: 123 Main St, Danbury CT" autocomplete="street-address" />
+            </label>
+
+            <label>
+              <span data-i18n="form_service">¿Qué servicio necesitas?</span>
+              <input id="bkService" placeholder="Aeropuerto / Delivery / DMV / Jump Start / Lockout" />
+            </label>
+
+            <label>
+              <span data-i18n="form_location">Ubicación actual (opcional)</span>
+              <div class="locrow">
+                <input id="bkLoc" placeholder="Pulsa para agregar ubicación" />
+                <button class="btn ghost" type="button" id="bkLocBtn" data-i18n="form_loc">Agregar mi ubicación actual</button>
+              </div>
+            </label>
+
+            <button class="btn primary full" type="submit" data-i18n="form_send">Enviar por WhatsApp</button>
+          </form>
         </div>
+      </div>
+    </section>
+
+    <!-- Música (solo texto “Música”) -->
+    <section id="music" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="music_title">Música</h2>
       </div>
     </section>
 
     <footer class="footer">
-      <div class="container footer-inner">
-        <div class="footer-left">
-          <div class="footer-brand">MICHAEL TAXI</div>
-          <div class="footer-copy" data-i18n="footer_rights">Derechos reservados.</div>
+      <div class="container foot">
+        <div>© 2026 Michael Taxi. Derechos reservados.</div>
+        <div class="social">
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="TikTok">TikTok</a>
         </div>
-
-        <div class="footer-right">
-          <div class="social">
-            <a href="#" aria-label="Facebook" title="Facebook">Fb</a>
-            <a href="#" aria-label="Instagram" title="Instagram">Ig</a>
-            <a href="#" aria-label="TikTok" title="TikTok">Tk</a>
-          </div>
-          <div class="designed">
-            <span data-i18n="designed_by">Diseñado por</span>
-            <a href="https://www.donbeltranedelefantecdecasa.com" target="_blank" rel="noopener">Don Beltrán</a>
-          </div>
+        <div class="by">
+          <span data-i18n="designed_by">Diseñado por</span>
+          <a href="https://www.donbeltranedelefantecdecasa.com" target="_blank" rel="noopener">Don Beltrán</a>
         </div>
       </div>
     </footer>
-
-  <!-- Música -->
-  <section class="section" id="music">
-    <div class="container">
-      <div class="section-head">
-        <h2 data-i18n="music_title">Música</h2>
-        <p class="muted">Reproductor listo para integrar (play / siguiente / atrás).</p>
-      </div>
-
-      <div class="music-embed">
-        <button class="mp-btn" type="button" aria-label="Anterior">⏮</button>
-        <button class="mp-btn primary" type="button" aria-label="Play/Pause">▶︎</button>
-        <button class="mp-btn" type="button" aria-label="Siguiente">⏭</button>
-        <div class="mp-track">
-          <div class="mp-title">MICHAEL TAXI RADIO</div>
-          <div class="mp-sub">Aquí conectas tu reproductor</div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
   </main>
 
-  <!-- Floating mini player (placeholder) -->
-  </div>
-  </div>
-
-  
-  <!-- WhatsApp FAB -->
-  <button class="wa-fab" id="waFab" aria-label="WhatsApp" title="WhatsApp">
-    <span class="wa-ico" aria-hidden="true">💬</span>
-  </button>
+  <!-- WhatsApp flotante (1 burbuja + 2 botones) -->
+  <button class="wa-fab" id="waFab" type="button" aria-label="WhatsApp">WhatsApp</button>
 
   <div class="wa-pop" id="waPop" aria-hidden="true">
-    <div class="wa-pop-head" data-i18n="wa_line1">¿A dónde te llevamos o qué servicio necesitas?</div>
-    <div class="wa-pop-actions">
-      <a class="btn primary full" id="waMsg" href="https://wa.me/12039478462" target="_blank" rel="noopener">Mensaje</a>
-      <a class="btn ghost full" id="waCall" href="tel:+12039478462">Llamar</a>
-    </div>
-    <div class="mini" style="margin-top:8px">
-      <div>WhatsApp: <a class="mini-link" href="https://wa.me/12039478462" target="_blank" rel="noopener">+1 (203) 947-8462</a></div>
+    <div class="wa-title" data-i18n="wa_welcome">¿A dónde te llevamos o qué servicio necesitas?</div>
+    <div class="wa-actions">
+      <a class="wa-action call" id="waCall" href="tel:+1-203-947-8462" data-i18n="wa_call">Llamar</a>
+      <a class="wa-action msg" id="waMsg" href="https://wa.me/12039478462" target="_blank" rel="noopener" data-i18n="wa_msg">Mensaje</a>
     </div>
   </div>
 
-
-<script src="./app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
